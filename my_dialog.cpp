@@ -6,7 +6,12 @@ my_dialog::my_dialog(QWidget *parent) noexcept :
   ui(new Ui::my_dialog)
 {
   ui->setupUi(this);
-  connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(close()));
+  connect(
+    ui->pushButton,
+    &QPushButton::clicked,
+    this,
+    &my_dialog::close
+  );
 }
 
 my_dialog::~my_dialog() noexcept
